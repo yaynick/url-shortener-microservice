@@ -3,7 +3,8 @@
 
 var path = process.cwd();
 
-module.exports = function (app) {
+
+module.exports = function (app, db) {
 
 	app.route('/')
 		.get(function (req, res) {
