@@ -12,7 +12,10 @@ var MONGO_URL = "mongodb://heroku_t33rkqlz:9rij8lqup023nfrn9qdliv0hdv@ds011409.m
 mongo.connect(MONGO_URL, function (err, db) {
 	if (err) throw err;
 
-	console.log("MongoDB successfully connected to port " + port);
+	var urls = db.collection('urls');
+	// urls.drop(function(err, result) {
+
+	// });
 
 	app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 	app.use('/public', express.static(process.cwd() + '/public'));
